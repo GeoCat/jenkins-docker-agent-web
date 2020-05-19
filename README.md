@@ -7,3 +7,5 @@ Includes:
 * LaTex
 * Sphinx
 * Other tools (check Dockerfile)
+
+Image at https://hub.docker.com/
