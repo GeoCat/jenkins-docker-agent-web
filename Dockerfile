@@ -32,7 +32,8 @@ RUN python3 -m pip install \
     sphinx_bootstrap_theme \
     sphinx_rtd_theme \
     sphinx-intl \
-    transifex-client
+    transifex-client \
+    python-levenshtein
 USER ${user}
 RUN mkdir environments \
     && python3 -m venv environments/py3
