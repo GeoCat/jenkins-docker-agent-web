@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN python3 -m pip install -U pip
 RUN python3 -m pip install \
-    Sphinx==3.0.1 \
+    Sphinx==3.2.1 \
     Pillow \
     JSTools \
     sphinx_bootstrap_theme \
