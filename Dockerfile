@@ -31,6 +31,7 @@ RUN python3 -m pip install \
     JSTools \
     sphinx_bootstrap_theme \
     sphinx_rtd_theme \
+    recommonmark \
     sphinx-intl \
     transifex-client \
     python-levenshtein
