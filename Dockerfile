@@ -30,8 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         texlive-latex-recommended \
         texlive-latex-extra \
         texlive-fonts-recommended \
-    && rm -rf /var/lib/apt/lists/* \
-    && python3 -m pip install --no-cache-dir -U pip \
+    && rm -rf /var/lib/apt/lists/* 
+RUN python3 -m pip install --no-cache-dir -U pip \
     && python3 -m pip install --no-cache-dir \
         Sphinx==3.5.4 \
         Pillow \
@@ -41,7 +41,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         recommonmark \
         sphinx-intl \
         transifex-client \
-        python-levenshtein
+        python-levenshtein \ 
+        "jinja2<3.1"
 
 RUN mkdir /workspace && \
   chown jenkins:jenkins /workspace
