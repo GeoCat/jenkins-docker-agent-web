@@ -39,6 +39,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         sphinx-intl \
         transifex-client \
         python-levenshtein
+
+RUN mkdir /workspace && \
+  chown ${user}:${user} /workspace
+
+
 USER ${user}
 RUN mkdir environments \
     && python3 -m venv environments/py3
