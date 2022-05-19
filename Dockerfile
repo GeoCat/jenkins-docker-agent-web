@@ -7,10 +7,13 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
+	gcc \
+	gnupg \
         graphviz \
         imagemagick \
         make \
         python3 \
+	python3-dev \
         python3-pip \
         python3-venv \
         wget \
@@ -41,7 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-levenshtein
 
 RUN mkdir /workspace && \
-  chown ${user}:${user} /workspace
+  chown jenkins:jenkins /workspace
 
 
 USER ${user}
