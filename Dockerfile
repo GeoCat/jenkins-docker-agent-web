@@ -20,10 +20,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         software-properties-common \
         zlib1g \
         zlib1g-dev \
-    && wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - \
-    &&  add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ \
+        apt-transport-https \
+    && wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /usr/share/keyrings/adoptium.asc \
+    && echo "deb [signed-by=/usr/share/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list \
     && apt-get update \
-        && apt-get install -y --no-install-recommends adoptopenjdk-8-hotspot \
+        && apt-get install -y --no-install-recommends temurin-8-jdk \
         maven \
         ant \
         latexmk \
