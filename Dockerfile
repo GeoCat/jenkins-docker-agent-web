@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* 
 RUN python3 -m pip install --no-cache-dir -U pip \
     && python3 -m pip install --no-cache-dir \
-        Sphinx==3.5.4 \
+        Sphinx==5.2.3  \
         Pillow \
         JSTools \
         sphinx_bootstrap_theme \
@@ -43,7 +43,7 @@ RUN python3 -m pip install --no-cache-dir -U pip \
         sphinx-intl \
         transifex-client \
         python-levenshtein \ 
-        "jinja2<3.1"
+        jinja2
 
 RUN mkdir /workspace && \
   chown jenkins:jenkins /workspace
